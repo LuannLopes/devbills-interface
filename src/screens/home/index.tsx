@@ -1,3 +1,4 @@
+import { Button } from '../../components/button';
 import { Logo } from '../../components/logo';
 import { Header } from './styles';
 
@@ -7,8 +8,8 @@ export function Home() {
       <Logo />
 
       <div>
-        <button>Button 1</button>
-        <button>Button 2</button>
+        <Button>Nova transação</Button>
+        <Button>Nova categoria</Button>
       </div>
     </Header>
   );
