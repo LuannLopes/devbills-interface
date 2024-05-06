@@ -33,3 +33,10 @@ export const Filters = styled.div`
   gap: 0.75rem;
   width: 100%;
 `;
+
+export const InputGroup = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 0.5rem;
+  max-width: 22.5rem;
+`;
