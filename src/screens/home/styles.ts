@@ -36,6 +36,7 @@ export const Filters = styled.div`
 
 export const InputGroup = styled.div`
   display: flex;
+  align-items: flex-end;
   width: 100%;
   gap: 0.5rem;
   max-width: 22.5rem;
