@@ -2,10 +2,21 @@ import { InputMask } from '@react-input/mask';
 
 import { Button } from '../../components/button';
 import { ButtonIcon } from '../../components/button-icon';
+import { Card } from '../../components/card';
 import { Input } from '../../components/input';
 import { Logo } from '../../components/logo';
 import { Title } from '../../components/title';
-import { Filters, Header, InputGroup, Main, Section } from './styles';
+import {
+  Balance,
+  ChartAction,
+  ChartContainer,
+  ChartContent,
+  Filters,
+  Header,
+  InputGroup,
+  Main,
+  Section,
+} from './styles';
 
 export function Home() {
   return (
@@ -24,23 +35,57 @@ export function Home() {
             <InputGroup>
               <InputMask
                 component={Input}
-                mask="dd/mm/yyyy"
-                replacement={{ d: /\d/, m: /\d/, y: /\d/ }}
+                mask="dd/mm/aaaa"
+                replacement={{ d: /\d/, m: /\d/, a: /\d/ }}
                 variant="dark"
                 label="Início"
-                placeholder="dd/mm/yyyy"
+                placeholder="dd/mm/aaaa"
               />
               <InputMask
                 component={Input}
-                mask="dd/mm/yyyy"
-                replacement={{ d: /\d/, m: /\d/, y: /\d/ }}
+                mask="dd/mm/aaaa"
+                replacement={{ d: /\d/, m: /\d/, a: /\d/ }}
                 variant="dark"
                 label="Início"
-                placeholder="dd/mm/yyyy"
+                placeholder="dd/mm/aaaa"
               />
               <ButtonIcon />
             </InputGroup>
           </Filters>
+          <Balance>
+            <Card title="Saldo" amount={1000000} />
+            <Card title="Receitas" amount={1000000} variant="incomes" />
+            <Card title="Gastos" amount={1000000} variant="expenses" />
+          </Balance>
+          <ChartContainer>
+            <header>
+              <Title
+                title="Gastos"
+                subTitle="Despesas por categoria no período"
+              />
+            </header>
+            <ChartContent></ChartContent>
+          </ChartContainer>
+          <ChartContainer>
+            <header>
+              <Title
+                title="Evolução Financeira"
+                subTitle="Saldo, Receitas e Gastos no ano"
+              />
+              <ChartAction>
+                <InputMask
+                  component={Input}
+                  mask="dd/mm/aaaa"
+                  replacement={{ d: /\d/, m: /\d/, a: /\d/ }}
+                  variant="black"
+                  label="ano"
+                  placeholder="dd/mm/aaaa"
+                />
+                <ButtonIcon />
+              </ChartAction>
+            </header>
+            <ChartContent></ChartContent>
+          </ChartContainer>
         </Section>
       </Main>
     </>
